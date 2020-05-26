@@ -26,8 +26,8 @@ let testPerson = [
 struct ContentView: View {
     var body: some View {
         VStack {
-            ForEach(1..<20) { value in
-                Text("Titel \(value)")
+            ForEach(testPerson) { person in
+                Text(person.name)
                     .font(.title)
                     .padding()
             }
