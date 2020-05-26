@@ -8,9 +8,30 @@
 
 import SwiftUI
 
+struct Person: Identifiable {
+    var id = UUID()
+    var name: String
+}
+
+let testPerson = [
+    Person(name: "Thomas"),
+    Person(name: "Michaela"),
+    Person(name: "Sabina"),
+    Person(name: "Karina"),
+    Person(name: "Tobias"),
+    Person(name: "Mark")
+]
+
+
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            ForEach(1..<20) { value in
+                Text("Titel \(value)")
+                    .font(.title)
+                    .padding()
+            }
+        }
     }
 }
 
