@@ -13,24 +13,19 @@ struct Person: Identifiable {
     var name: String
 }
 
-let testPerson = [
-    Person(name: "Thomas"),
-    Person(name: "Michaela"),
-    Person(name: "Sabina"),
-    Person(name: "Karina"),
-    Person(name: "Tobias"),
-    Person(name: "Mark")
-]
-
-
 struct ContentView: View {
+    @State private var testPerson = [
+        Person(name: "Thomas"),
+        Person(name: "Michaela"),
+        Person(name: "Sabina"),
+        Person(name: "Karina"),
+        Person(name: "Tobias"),
+        Person(name: "Mark")
+    ]
+    
     var body: some View {
-        VStack {
-            ForEach(testPerson) { person in
-                Text(person.name)
-                    .font(.title)
-                    .padding()
-            }
+        List(testPerson) { person in
+            Text(person.name)
         }
     }
 }
