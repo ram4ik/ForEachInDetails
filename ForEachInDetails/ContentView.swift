@@ -24,8 +24,13 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        List(testPerson) { person in
-            Text(person.name)
+        List {
+            ForEach(testPerson) { person in
+                Text(person.name)
+            }
+            .onDelete { (IndexSet) in
+                self.testPerson.remove(atOffsets: IndexSet)
+            }
         }
     }
 }
